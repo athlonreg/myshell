@@ -1,0 +1,26 @@
+dn: uid=template,ou=People,dc=example,dc=com
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+sn: template
+givenName: template
+cn: template
+displayName: template
+mail: template@example.com
+uidNumber: 2529
+gidNumber: 2529
+loginShell: /bin/bash
+homeDirectory: /home/template
+shadowExpire: -1
+shadowFlag: 0
+shadowWarning: 7
+shadowMin: 0
+shadowMax: 99999
+shadowLastChange: 17793
+
+dn: cn=template,ou=Group,dc=example,dc=com
+objectClass: posixGroup
+cn: template
+gidNumber: 2529
+memberUid: template
+
