@@ -4,7 +4,6 @@ prepare(){
 	echo -e "\033[42;31m Install deps ... \033[0m"
 	yum -y install epel-release
 	yum -y install python-pip
-	yum install privoxy -y
 	pip install shadowsocks
 }
 
@@ -58,6 +57,7 @@ ss_test(){
 
 privoxy_conf(){
 	echo -e "\033[42;31m Boot privoxy ... \033[0m"
+	yum install privoxy -y
 	systemctl enable privoxy
 	systemctl start privoxy
 	systemctl status privoxy
