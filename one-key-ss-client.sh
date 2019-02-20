@@ -12,13 +12,26 @@ ss_conf(){
 	mkdir /etc/shadowsocks
 	touch /etc/shadowsocks/shadowsocks.json
 
-	server=localhost
-	server_port=8443
-
 	read -p "Input the shadowsocks server you want to setup(default is localhost): " server
 	read -p "Input the shadowsocks server port you want to setup(default is 8443): " server_port
 	read -p "Input the shadowsocks password you want to setup(default is 123456): " password
 	read -p "Input the shadowsocks method you want to setup(default is aes-256-cfb): " method
+
+	if [[ $server == "" ]] ; then
+		server=localhost
+	fi
+
+	if [[ $server_port == "" ]] ; then
+		server_port=8443
+	fi
+
+	if [[ $password == "" ]] ; then
+		password=123456
+	fi
+
+	if [[ $method == "" ]] ; then
+		method=aes-256-cfb
+	fi
 
 	echo -e "{" > /etc/shadowsocks/shadowsocks.json
 	echo -e "\t\"server\":\"$server\"," >> /etc/shadowsocks/shadowsocks.json
@@ -63,7 +76,6 @@ privoxy_conf(){
 	systemctl status privoxy
 	
 	echo -e "\033[42;31m Setup privoxy ... \033[0m"
-	echo 'listen-address 127.0.0.1:8118' >> /etc/privoxy/config
 	echo 'forward-socks5t / 127.0.0.1:1080 .' >> /etc/privoxy/config
 }
 
