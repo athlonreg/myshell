@@ -33,7 +33,7 @@ ss_conf(){
 	echo -e '"\tlocal_port":1080,' >> /etc/shadowsocks/shadowsocks.json
 	echo -e "\t\"password\":\"$password\"," >> /etc/shadowsocks/shadowsocks.json
 	echo -e '"\ttimeout":300, '>> /etc/shadowsocks/shadowsocks.json
-	echo -e "\t\"method\":\"$method\",' >> /etc/shadowsocks/shadowsocks.json
+	echo -e "\t\"method\":\"$method\"," >> /etc/shadowsocks/shadowsocks.json
 	echo -e '"\tfast_open": false,' >> /etc/shadowsocks/shadowsocks.json
 	echo -e '"\tworkers": 1' >> /etc/shadowsocks/shadowsocks.json
 	echo -e "}" >> /etc/shadowsocks/shadowsocks.json
