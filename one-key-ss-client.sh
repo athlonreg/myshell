@@ -21,10 +21,10 @@ ss_conf(){
 	server=localhost
 	server_port=8443
 
-	read -p "Input the sshadowsocks server you want to setup(default is localhost): " server
-	read -p "Input the sshadowsocks server port you want to setup(default is 8443): " server_port
-	read -p "Input the sshadowsocks password you want to setup(default is 123456): " password
-	read -p "Input the sshadowsocks method you want to setup(default is aes-256-cfb): " method
+	read -p "Input the shadowsocks server you want to setup(default is localhost): " server
+	read -p "Input the shadowsocks server port you want to setup(default is 8443): " server_port
+	read -p "Input the shadowsocks password you want to setup(default is 123456): " password
+	read -p "Input the shadowsocks method you want to setup(default is aes-256-cfb): " method
 
 	echo -e "{" > /etc/shadowsocks/shadowsocks.json
 	echo -e '\t"server":"$server",' >> /etc/shadowsocks/shadowsocks.json
