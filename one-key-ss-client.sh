@@ -6,11 +6,6 @@ prepare(){
 	yum -y install python-pip
 	yum install privoxy -y
 	pip install shadowsocks
-
-	echo -e "\033[42;31m Boot privoxy ... \033[0m"
-	systemctl enable privoxy
-	systemctl start privoxy
-	systemctl status privoxy
 }
 
 ss_conf(){
@@ -62,6 +57,11 @@ ss_test(){
 }
 
 privoxy_conf(){
+	echo -e "\033[42;31m Boot privoxy ... \033[0m"
+	systemctl enable privoxy
+	systemctl start privoxy
+	systemctl status privoxy
+	
 	echo -e "\033[42;31m Setup privoxy ... \033[0m"
 	echo 'listen-address 127.0.0.1:8118' >> /etc/privoxy/config
 	echo 'forward-socks5t / 127.0.0.1:1080 .' >> /etc/privoxy/config
