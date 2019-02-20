@@ -27,13 +27,13 @@ ss_conf(){
 	read -p "Input the shadowsocks method you want to setup(default is aes-256-cfb): " method
 
 	echo -e "{" > /etc/shadowsocks/shadowsocks.json
-	echo -e '\t"server":"$server",' >> /etc/shadowsocks/shadowsocks.json
-	echo -e '\t"server_port":$server_port,' >> /etc/shadowsocks/shadowsocks.json
+	echo -e "\t\"server\":\"$server\"," >> /etc/shadowsocks/shadowsocks.json
+	echo -e "\t\"server_port\":$server_port," >> /etc/shadowsocks/shadowsocks.json
 	echo -e '"\tlocal_address": "127.0.0.1",' >> /etc/shadowsocks/shadowsocks.json
 	echo -e '"\tlocal_port":1080,' >> /etc/shadowsocks/shadowsocks.json
-	echo -e '"\tpassword":"$password",' >> /etc/shadowsocks/shadowsocks.json
+	echo -e "\t\"password\":\"$password\"," >> /etc/shadowsocks/shadowsocks.json
 	echo -e '"\ttimeout":300, '>> /etc/shadowsocks/shadowsocks.json
-	echo -e '"\tmethod":"$method",' >> /etc/shadowsocks/shadowsocks.json
+	echo -e "\t\"method\":\"$method\",' >> /etc/shadowsocks/shadowsocks.json
 	echo -e '"\tfast_open": false,' >> /etc/shadowsocks/shadowsocks.json
 	echo -e '"\tworkers": 1' >> /etc/shadowsocks/shadowsocks.json
 	echo -e "}" >> /etc/shadowsocks/shadowsocks.json
