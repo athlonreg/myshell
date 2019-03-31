@@ -4,27 +4,13 @@
 PS4='Line ${LINENO}:'
 
 # --------------------------------------
-SCRIPTVER="v5.1.3"
-export GCCVERS=8
-# clean on gcc build error
-export GCC_CLEAN=Yes
-if [[ $GCCVERS == 8 ]]; then
-	export GCC_VERSION=8.3.0
-	export BINUTILS_VERSION=${BINUTILS_VERSION:-binutils-2.32}
-	# Version of libraries are from ./contrib/download_prerequisites in gcc source directory
-	export MPFR_VERSION=${MPFR_VERSION:-mpfr-4.0.2}
-	export MPC_VERSION=${MPC_VERSION:-mpc-1.1.0}
-	export ISL_VERSION=${ISL_VERSION:-isl-0.21}
-else
-	export BINUTILS_VERSION=${BINUTILS_VERSION:-binutils-2.25}
-	export GCC_VERSION=4.9.3
-	# Version of libraries are from ./contrib/download_prerequisites in gcc source directory
-	export GMP_VERSION=${GMP_VERSION:-gmp-6.0.0a}
-	export MPFR_VERSION=${MPFR_VERSION:-mpfr-3.1.3}
-	export MPC_VERSION=${MPC_VERSION:-mpc-1.0.3}
-	export ISL_VERSION=${ISL_VERSION:-isl-0.12.2}
-	export GCCVERS=4
-fi
+SCRIPTVER="v5.0.7"
+export BINUTILS_VERSION=binutils-2.32
+export GCC_VERSION=8.3.0
+export GMP_VERSION=gmp-6.1.2
+export MPFR_VERSION=mpfr-4.0.2
+export MPC_VERSION=mpc-1.1.0
+export ISL_VERSION=isl-0.21
 RSCRIPT_INFO="sync edk2 svn r28976 (tagged as edk2-stable201903)"
 RSCRIPTVER=""
 export LC_ALL=C
@@ -1259,11 +1245,6 @@ fi
 }
 # --------------------------------------
 cbuild() {
-if [ -f "${DIR_MAIN}"/opt/local/cross/bin/x86_64-clover-linux-gnu-gcc ]; then
-	GCCVERSION=$("${DIR_MAIN}"/opt/local/cross/bin/x86_64-clover-linux-gnu-gcc -dumpversion)
-else
-	GCCVERSION="0"
-fi
 printf "\e[1;32mBuilding with \e[1;31m $BUILDTOOL\n"
 if [[ -d "${DIR_MAIN}/edk2_micky/Clover/.svn" && "$INTERACTIVE" != "NO" ]] ; then
 	echo 'Please enter your choice: '
