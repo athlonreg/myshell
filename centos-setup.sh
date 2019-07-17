@@ -2,8 +2,8 @@
 
 update(){
 	cd /usr/local
-	wget http://dev.mysql.com/get/mysql57-community-release-el7-9.noarch.rpm
-	rpm -ivh mysql57-community-release-el7-9.noarch.rpm
+	wget http://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm
+	rpm -ivh mysql57-community-release-el7-11.noarch.rpm
 	touch /etc/yum.repos.d/nginx.repo
 	echo -e "
 	[nginx]
