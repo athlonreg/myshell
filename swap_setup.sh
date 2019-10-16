@@ -11,8 +11,7 @@
 setswap(){
 	echo "Starting setup swap partition......"
 	read -p "Input size of swap partition you want to set(GB): " size
-	((size=$size*1024))
-	dd if=/dev/zero of=/mnt/swap bs=1M count=$size
+	dd if=/dev/zero of=/mnt/swap bs=${size}M count=1024
 	mkswap -f /mnt/swap
 	chmod 0600 /mnt/swap
 	swapon /mnt/swap
