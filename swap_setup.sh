@@ -44,7 +44,7 @@ main(){
 	if [[ $option == "y" || $option == "yes" ]] ; then
 		automount
 	else
-		echo "Don't set swap partition to auto mount!"
+		echo "Failed to set swap partition to auto mount!"
 	fi
 	# auto mount end
 	
